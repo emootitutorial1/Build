@@ -16,4 +16,4 @@ RUN cd emootitutor && git pull emootitutor HEAD
 RUN cd emootitutor/HelloEmooti && mvn compile install
 RUN cd emootitutor/Sprint1 && mvn package
 WORKDIR emootitutor/Sprint1
-RUN echo "mvn tomcat7:deploy" >> cmd.sp
+RUN echo "mvn tomcat7:deploy" >> cmd.sh
