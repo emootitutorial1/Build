@@ -1,6 +1,7 @@
-# GitHub and do a maven build it
+# Dockerfile
+# GitHub and do a maven build
 FROM emooti/tutorbase
-MAINTAINER Uta Kapp "utakapp@gmail.com"
+MAINTAINER Uta Kapp "uta.kapp@emooti.org"
 
 ENV REFRESHED_AT 2016-03-27
 ENV MAVEN_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=512m"
@@ -17,3 +18,5 @@ RUN cd emootitutor/HelloEmooti && mvn compile install
 RUN cd emootitutor/Sprint1 && mvn package
 WORKDIR emootitutor/Sprint1
 RUN echo "mvn tomcat7:deploy" >> cmd.sh
+# /bin/sh -c "while true; do sh cmd.sh; sleep 5; done"
+# docker run --name tutorial1build -i -t emooti/tutorial1build
